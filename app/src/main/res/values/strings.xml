@@ -26,5 +26,24 @@
     <string name="salary_range">$100,000 - $150,000</string>
     <string name="full_part_time">Full time</string>
     <string name="days_left_to_apply">10 Days left</string>
+
+
+
+    <!-- Detail Activity: JOBS -->
     <string name="business_title">Application Examiner, Bureau of Vital Statistics/Vital Statistics/Vital Records</string>
+    <string name="civic_title_text">CLERICAL ASSOCIATE</string>
+    <string name="jobs_id_apply_text">jobs_id_apply_text</string>
+    <string name="preferred_skills_text">Must be comfortable working in a dynamic atmosphere handling multiple concurrent activities displaying excellent attention to detail; work well with a team to meet deadlines and analyze problems and potentially difficult scenarios. Knowledge of detailed record keeping systems; excellent oral, written, administrative and customer service skills. Strong working knowledge of Microsoft Office Programs such as Word, Excel and Access. Ability to speak Spanish or a language other than English is a plus.</string>
+    <string name="post_date_text">2018-01-16T00:00:00</string>
+    <string name="post_until_text">2018-05-11T00:00:00</string>
+    <string name="residency_req_text">New York City residency is generally required within 90 days of appointment. However, City Employees in certain titles who have worked for the City for 2 continuous years may also be eligible to reside in Nassau, Suffolk, Putnam, Westchester, Rockland, or Orange County. To determine if the residency requirement applies to you, please discuss with the agency representative at the time of interview.</string>
+    <string name="minimum_req_text">Qualification Requirements  A four-year high school diploma or its educational equivalent approved by a State\'s department of education or a recognized accrediting organization and one year of satisfactory clerical experience.  Skills Requirement  Keyboard familiarity with the ability to type at a minimum of 100 key strokes (20 words) per minute.t</string>
+    <string name="job_description_text">**OPEN TO PERMANENT CLERICAL ASSOCIATES ONLY. YOU MUST CLEARLY STATE YOUR CIVIL SERVICE STATUS ON YOUR RESUME OR COVER LETTER. FAILURE TO DO SO WILL RESULT IN YOUR DISQUALIFICATION.   The NYC Department of Health and Mental Hygiene (DOHMH) is an agency recognized worldwide for being a leader in public health.  The Bureau of Vital Statistics is responsible for registering and certifying all birth, deaths, spontaneous and induced terminations of pregnancy in NYC.  The bureau issues, analyzes and reports on 285,000 vital events each year.  The bureau is a very large customer service operation, providing death certification services on a 24/7 basis, issuing more than 900,000 certified copies of birth and death records, and fulfilling hundreds of data requests annually.   DUTIES WILL INCLUDE BUT NOT BE LIMITED TO:   - Receive and accurately examine physical and/or electronic birth and or death correction applications and supporting documents, including, Acknowledgement of Paternity, Court Ordered Filiations, Adoption Orders and Transgender amendments; ensuring documentary evidence, identification and fee(s) are appropriately submitted. Review confidential documents submitted with application for completeness.   - Accurately complete or reject amendments according to DOHMH, Vital Records guidelines.   - Adhere to established turn-around times for accurately processing applications.   - Respond to telephone and written inquiries from customers, including other City, State and Federal agencies.   - Deliver excellent customer service when resolving and addressing customer inquiries, including with in-person customers, via email and phone.   - Perform other related clerical support functions, including assisting with special projects, testing new workflow processes, faxing, filing and indexing. Transfer cases to and from other Office of Vital Records Units as needed.</string>
+    <string name="full_part_time_text">F</string>
+    <string name="work_location_text">125 Worth Street, Nyc</string>
+    <string name="job_category_text">Health</string>
+    <string name="salary_frequency_text">Annual</string>
+    <string name="salary_to_text">42072.48</string>
+    <string name="salary_from_text">33875</string>
+    <string name="division_work_unit_text">Vital Statistics/Vital Recor</string>
 </resources>
