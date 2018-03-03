@@ -1,4 +1,4 @@
-package com.nyc.guideme;
+package com.nyc.guideme.adapter;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
