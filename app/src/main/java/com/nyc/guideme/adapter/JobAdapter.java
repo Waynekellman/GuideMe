@@ -1,10 +1,13 @@
 package com.nyc.guideme.adapter;
 
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.gson.Gson;
+import com.nyc.guideme.JobDetailsActivity;
 import com.nyc.guideme.R;
 import com.nyc.guideme.models.JobModels;
 
@@ -31,8 +34,17 @@ public class JobAdapter extends RecyclerView.Adapter<JobViewHoler> {
     }
 
     @Override
-    public void onBindViewHolder(JobViewHoler holder, int position) {
+    public void onBindViewHolder(final JobViewHoler holder, final int position) {
         holder.onBind(jobList.get(position));
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String jobJSON = new Gson().toJson(jobList.get(position));
+                Intent intent = new Intent(holder.itemView.getContext(), JobDetailsActivity.class);
+                intent.putExtra("jobDetails", jobJSON);
+                holder.itemView.getContext().startActivity(intent);
+            }
+        });
 
     }
 
