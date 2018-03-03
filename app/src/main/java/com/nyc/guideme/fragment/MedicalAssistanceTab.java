@@ -46,7 +46,7 @@ public class MedicalAssistanceTab extends Fragment {
             @Override
             public void onSuccessModel(List<MedicaidModels> medicaidModels) {
 
-                Log.d(TAG, "onSuccessModel: Jobs " + medicaidModels.get(0).getAddress());
+                Log.d(TAG, "onSuccessModel: Medicaid " + medicaidModels.get(0).getAddress());
                 // TODO: Set the adapter in here
             }
 
