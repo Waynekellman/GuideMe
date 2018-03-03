@@ -27,7 +27,7 @@ class JobViewHoler extends RecyclerView.ViewHolder {
         agencyTv = itemView.findViewById(R.id.agency_tv);
         locationJob = itemView.findViewById(R.id.location_id);
         jobTypeTime = itemView.findViewById(R.id.full_time_part_time_indicator);
-        dueTime =(RelativeTimeTextView) itemView.findViewById(R.id.post_until);
+        dueTime = (RelativeTimeTextView) itemView.findViewById(R.id.post_until);
         salaryJob = itemView.findViewById(R.id.salary_id);
 
     }
@@ -37,12 +37,11 @@ class JobViewHoler extends RecyclerView.ViewHolder {
         agencyTv.setText(jobModels.getAgency());
         locationJob.setText(jobModels.getWork_location());
 
-        String timeFull =null;
-        if(jobModels.getFull_time_part_time_indicator().equalsIgnoreCase("f")){
-            timeFull="Full Time ";
-        }
-        else {
-            timeFull="Part Time";
+        String timeFull = null;
+        if (jobModels.getFull_time_part_time_indicator().equalsIgnoreCase("f")) {
+            timeFull = "Full Time ";
+        } else {
+            timeFull = "Part Time";
         }
         jobTypeTime.setText(timeFull);
 
@@ -50,12 +49,13 @@ class JobViewHoler extends RecyclerView.ViewHolder {
         Date date = null;
         try {
             date = ISO8601Parse.parse(jobModels.getPosting_date());
-            Log.d( "onBind: ",date+"");
+            Log.d("onBind: ", date + "");
         } catch (ParseException e) {
             e.printStackTrace();
         }
-
-        dueTime.setReferenceTime(date.getTime());
+        if (date != null) {
+            dueTime.setReferenceTime(date.getTime());
+        }
         salaryBuilder.append(" - ").append(jobModels.getSalary_range_to()).append(" $ ");
         salaryJob.setText(salaryBuilder);
 
