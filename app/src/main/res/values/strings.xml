@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">GuideMe</string>
+<<<<<<< HEAD
     <string name="title_activity_login">Sign in</string>
 
     <!-- Strings related to login -->
@@ -14,4 +15,9 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+=======
+    <string name="user_name">UserName</string>
+    <string name="password">PassWord</string>
+    <string name="submit_login">Login</string>
+>>>>>>> 5529c2f7e602f1350590e1b223c5ce1a5ae62c25
 </resources>
