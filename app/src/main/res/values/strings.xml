@@ -28,7 +28,6 @@
     <string name="days_left_to_apply">10 Days left</string>
 
 
-
     <!-- Detail Activity: JOBS -->
     <string name="business_title">Application Examiner, Bureau of Vital Statistics/Vital Statistics/Vital Records</string>
     <string name="civic_title_text">CLERICAL ASSOCIATE</string>
@@ -46,4 +45,9 @@
     <string name="salary_to_text">42072.48</string>
     <string name="salary_from_text">33875</string>
     <string name="division_work_unit_text">Vital Statistics/Vital Recor</string>
+    <string name="fa_phone">212-321-9203</string>
+    <string name="fa_address">40-55 10th ave , Lower Level</string>
+    <string name="fa_zip">Manhattan , NY, 10034</string>
+    <string name="business_title">Application Examiner, Bureau of Vital Statistics/Vital Statistics/Vital Records</string>
+    <string name="title_activity_maps">Map</string>
 </resources>

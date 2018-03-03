@@ -3,13 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
     android:padding="15dp"
     tools:context="com.nyc.guideme.JobDetailsActivity">
 
-
-
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:map="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/map_details"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        tools:context="com.nyc.guideme.JobDetailsActivity" />
 
 
     <TextView
@@ -29,8 +35,7 @@
         android:textSize="18sp"
         android:text="@string/civic_title_text"
         android:layout_height="wrap_content" />
-
-
+  
     <TextView
         android:id="@+id/division_work_unit_details"
         android:text="@string/division_work_unit_text"
@@ -104,13 +109,17 @@
             android:text="salary frequency : "
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
+      
+    <TextView
+        android:id="@+id/salary_to_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
     <TextView
         android:id="@+id/salary_frequency_detail"
         android:textSize="15sp"
         android:text="@string/salary_frequency_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
-
     </LinearLayout>
 
 
@@ -195,7 +204,6 @@
         android:text="@string/job_description_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
-
     </LinearLayout>
 
     <TextView
@@ -218,19 +226,16 @@
         android:text="@string/post_date_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fillViewport="true">
-
+        android:fillViewport="true"
+                
     <TextView
         android:id="@+id/prefered_skills_details"
         android:text="@string/preferred_skills_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
-
-
     </ScrollView>
 
     <TextView
@@ -238,5 +243,4 @@
         android:text="@string/jobs_id_apply_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
-
 </LinearLayout>
