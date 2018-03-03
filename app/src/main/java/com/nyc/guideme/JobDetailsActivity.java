@@ -1,6 +1,7 @@
 package com.nyc.guideme;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.location.Address;
 import android.location.Geocoder;
 import android.support.v7.app.AppCompatActivity;
@@ -29,15 +30,25 @@ public class JobDetailsActivity extends AppCompatActivity implements OnMapReadyC
 
     private GoogleMap mMap;
     private Address location;
+    private SharedPreferences sharedPreferences;
+    private final String SHARED_PREF_KEY = "shaered_pref_details_activity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_job_details);
+        sharedPreferences = getSharedPreferences(SHARED_PREF_KEY, MODE_PRIVATE);
 
         Intent intent = getIntent();
         if (intent.hasExtra("jobDetails")) {
             job = new Gson().fromJson(intent.getStringExtra("jobDetails"), JobModels.class);
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.clear();
+            editor.putString("jobDetails",intent.getStringExtra("jobDetails") );
+        }
+
+        if (!sharedPreferences.getString("jobDetails", "").equals("")){
+            job = new Gson().fromJson(sharedPreferences.getString("jobDetails", ""), JobModels.class);
         }
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
@@ -108,7 +119,8 @@ public class JobDetailsActivity extends AppCompatActivity implements OnMapReadyC
             location = getLocationFromAddress(job.getWork_location());
             LatLng jobMarker = new LatLng(location.getLatitude(),location.getLongitude());
             mMap.addMarker(new MarkerOptions().position(jobMarker).title(job.getAgency()));
-            mMap.moveCamera(CameraUpdateFactory.newLatLng(jobMarker));
+            float zoomLevel = (float) 14.0; //This goes up to 21
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(jobMarker, zoomLevel));
         } catch (IOException e) {
             e.printStackTrace();
         }
