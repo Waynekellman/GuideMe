@@ -9,7 +9,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-import android.util.Log;
+import java.util.List;
 
 
 /**
@@ -32,17 +32,8 @@ public class RetrofitClient {
         }
         return retrofitClient;
     }
-
-    public JobsNetworkListener getJobsNetworkListener() {
-        return jobsNetworkListener;
-    }
-
     public void setJobsNetworkListener(JobsNetworkListener jobsNetworkListener) {
         this.jobsNetworkListener = jobsNetworkListener;
-    }
-
-    public MedicaidNetworkListener getMedicaidNetworkListener() {
-        return medicaidNetworkListener;
     }
 
     public void setMedicaidNetworkListener(MedicaidNetworkListener medicaidNetworkListener) {
@@ -62,21 +53,15 @@ public class RetrofitClient {
 
     public void getJobModel() {
         NYCJobService service = buildRetrofit().create(NYCJobService.class);
-        Call<JobModels> getJobsModel = service.getJobsModels();
-        getJobsModel.enqueue(new Callback<JobModels>() {
+        Call<List<JobModels>> getJobsModel = service.getJobsModels();
+        getJobsModel.enqueue(new Callback<List<JobModels>>() {
             @Override
-            public void onResponse(Call<JobModels> call, Response<JobModels> response) {
-                if (response.isSuccessful()) {
-                    Log.d("onResponse: ", "Successful");
-
-                    if (jobsNetworkListener != null) {
-                        jobsNetworkListener.onSuccesModel(response.body());
-                    }
-                }
+            public void onResponse(Call<List<JobModels>> call, Response<List<JobModels>> response) {
+                jobsNetworkListener.onSuccessModel(response.body());
             }
 
             @Override
-            public void onFailure(Call<JobModels> call, Throwable t) {
+            public void onFailure(Call<List<JobModels>> call, Throwable t) {
                 jobsNetworkListener.onFailure(t);
             }
         });
@@ -85,33 +70,30 @@ public class RetrofitClient {
     public void getMedicaidModel() {
 
         NYCJobService service = buildRetrofit().create(NYCJobService.class);
-        Call<MedicaidModels> getMedicaidModels = service.getMedicaidModels();
-        getMedicaidModels.enqueue(new Callback<MedicaidModels>() {
+        Call<List<MedicaidModels>> getMedicaidModels = service.getMedicaidModels();
+        getMedicaidModels.enqueue(new Callback<List<MedicaidModels>>() {
             @Override
-            public void onResponse(Call<MedicaidModels> call, Response<MedicaidModels> response) {
+            public void onResponse(Call<List<MedicaidModels>> call, Response<List<MedicaidModels>> response) {
+                medicaidNetworkListener.onSuccessModel(response.body());
 
             }
 
             @Override
-            public void onFailure(Call<MedicaidModels> call, Throwable t) {
-
+            public void onFailure(Call<List<MedicaidModels>> call, Throwable t) {
+                medicaidNetworkListener.onFailure(t);
             }
         });
     }
 
-    public Retrofit getRetrofit() {
-        return retrofit;
-    }
-
     public interface JobsNetworkListener {
-        void onSuccesModel(JobModels jobModels);
+        void onSuccessModel(List<JobModels> jobModels);
 
         void onFailure(Throwable t);
     }
 
     public interface MedicaidNetworkListener {
 
-        void onSuccesModel(MedicaidModels medicaidModels);
+        void onSuccessModel(List<MedicaidModels> medicaidModels);
 
         void onFailure(Throwable t);
     }

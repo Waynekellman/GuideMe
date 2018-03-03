@@ -2,6 +2,7 @@ package com.nyc.guideme.models;
 
 /**
  * Created by Wayne Kellman on 3/3/18.
+ * Edited by Niema
  */
 
 public class MedicaidModels {
@@ -127,4 +128,4 @@ public class MedicaidModels {
     public void setTelephone_number(String telephone_number) {
         this.telephone_number = telephone_number;
     }
-} // ends medicaid models
+} // ends medicaid models\
