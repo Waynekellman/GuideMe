@@ -1,6 +1,7 @@
 package com.nyc.guideme.network;
 
 import com.nyc.guideme.models.JobModels;
+import com.nyc.guideme.models.MedicaidModels;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -13,4 +14,7 @@ public interface NYCJobService {
 
     @GET("resource/swhp-yxa4.json")
     Call<JobModels> getJobsModels();
+
+    @GET("resource/vydn-n796.json")
+    Call<MedicaidModels> getMedicaidModels();
 }
