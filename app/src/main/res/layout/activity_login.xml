@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/statue"
+    android:layout_height="match_parent"
+    tools:context="com.nyc.guideme.login.Login">
+
+
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_gravity="center"
+        android:layout_marginEnd="72dp"
+        android:layout_marginTop="51dp"
+        android:gravity="center"
+        android:hint="@string/user_name"
+        android:maxLines="1"
+        android:textStyle="bold"
+        android:maxWidth="200dp"
+        android:paddingTop="50dp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/username"
+        android:layout_below="@+id/username"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:hint="@string/password"
+        android:textStyle="bold"
+        android:maxLines="1"
+        android:maxWidth="200dp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF" />
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:layout_alignStart="@+id/password"
+        android:layout_below="@+id/password"
+        android:layout_gravity="center"
+        android:layout_marginStart="56dp"
+        android:text="@string/submit_login" />
+
+</RelativeLayout>
+
