@@ -2,6 +2,8 @@ package com.nyc.guideme.network;
 
 import com.nyc.guideme.models.JobModels;
 
+import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.http.GET;
 
@@ -12,5 +14,5 @@ import retrofit2.http.GET;
 public interface NYCJobService {
 
     @GET("resource/swhp-yxa4.json")
-    Call<JobModels> getJobsModels();
+    Call<List<JobModels>> getJobsModels();
 }

@@ -10,6 +10,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 import android.util.Log;
 
+import java.util.List;
+
 
 /**
  * Created by Wayne Kellman on 3/3/18.
@@ -52,21 +54,22 @@ public class RetrofitClient {
 
     public void getJobModel() {
         NYCJobService service = buildRetrofit().create(NYCJobService.class);
-        Call<JobModels> getJobsModel = service.getJobsModels();
-        getJobsModel.enqueue(new Callback<JobModels>() {
+        Call<List<JobModels>> getJobsModel = service.getJobsModels();
+        getJobsModel.enqueue(new Callback<List<JobModels>>() {
             @Override
-            public void onResponse(Call<JobModels> call, Response<JobModels> response) {
+            public void onResponse(Call<List<JobModels>> call, Response<List<JobModels>> response) {
+
                 if (response.isSuccessful()) {
                     Log.d("onResponse: ", "Successful");
 
                     if (retrofitNetworkListener != null) {
-                        retrofitNetworkListener.onSuccesModel(response.body());
+                        retrofitNetworkListener.onSuccessModel(response.body());
                     }
                 }
             }
 
             @Override
-            public void onFailure(Call<JobModels> call, Throwable t) {
+            public void onFailure(Call<List<JobModels>> call, Throwable t) {
                 retrofitNetworkListener.onFailure(t);
             }
         });
@@ -77,7 +80,7 @@ public class RetrofitClient {
     }
 
     public interface RetrofitNetworkListener {
-        void onSuccesModel(JobModels jobModels);
+        void onSuccessModel(List<JobModels> jobModels);
 
         void onFailure(Throwable t);
     }
