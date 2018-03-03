@@ -1,5 +1,6 @@
 package com.nyc.guideme.network;
 
+import com.nyc.guideme.models.FoodStampOfficeModel;
 import com.nyc.guideme.models.JobModels;
 import com.nyc.guideme.models.MedicaidModels;
 
@@ -22,6 +23,7 @@ public class RetrofitClient {
 
     private JobsNetworkListener jobsNetworkListener = null;
     private MedicaidNetworkListener medicaidNetworkListener = null;
+    private FinancialNetworkListener financialNetworkListener = null;
 
 
     public static RetrofitClient getInstance() {
@@ -38,6 +40,10 @@ public class RetrofitClient {
 
     public void setMedicaidNetworkListener(MedicaidNetworkListener medicaidNetworkListener) {
         this.medicaidNetworkListener = medicaidNetworkListener;
+    }
+
+    public void setFinancialNetworkListener(FinancialNetworkListener financialNetworkListener) {
+        this.financialNetworkListener = financialNetworkListener;
     }
 
     public Retrofit buildRetrofit() {
@@ -85,6 +91,22 @@ public class RetrofitClient {
         });
     }
 
+    public void getFinancialModel() {
+        NYCJobService service = buildRetrofit().create(NYCJobService.class);
+        Call<List<FoodStampOfficeModel>> getFoodModel = service.getFoodOfficeModel();
+        getFoodModel.enqueue(new Callback<List<FoodStampOfficeModel>>() {
+            @Override
+            public void onResponse(Call<List<FoodStampOfficeModel>> call, Response<List<FoodStampOfficeModel>> response) {
+                financialNetworkListener.onSuccessModel(response.body());
+            }
+
+            @Override
+            public void onFailure(Call<List<FoodStampOfficeModel>> call, Throwable t) {
+                financialNetworkListener.onFailure(t);
+            }
+        });
+    }
+
     public interface JobsNetworkListener {
         void onSuccessModel(List<JobModels> jobModels);
 
@@ -94,6 +116,13 @@ public class RetrofitClient {
     public interface MedicaidNetworkListener {
 
         void onSuccessModel(List<MedicaidModels> medicaidModels);
+
+        void onFailure(Throwable t);
+    }
+
+    public interface FinancialNetworkListener {
+
+        void onSuccessModel(List<FoodStampOfficeModel> foodStampOfficeModels);
 
         void onFailure(Throwable t);
     }

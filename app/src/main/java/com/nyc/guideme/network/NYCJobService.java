@@ -1,5 +1,6 @@
 package com.nyc.guideme.network;
 
+import com.nyc.guideme.models.FoodStampOfficeModel;
 import com.nyc.guideme.models.JobModels;
 import com.nyc.guideme.models.MedicaidModels;
 
@@ -19,4 +20,7 @@ public interface NYCJobService {
 
     @GET("resource/vydn-n796.json")
     Call<List<MedicaidModels>> getMedicaidModels();
+
+    @GET("resource/ma86-m5w3.json")
+    Call<List<FoodStampOfficeModel>> getFoodOfficeModel();
 }

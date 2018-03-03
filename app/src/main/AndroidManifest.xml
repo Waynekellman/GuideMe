@@ -3,14 +3,11 @@
     package="com.nyc.guideme">
 
     <uses-permission android:name="android.permission.INTERNET" />
-<<<<<<< HEAD
 
     <!-- To auto-complete the email text field in the login form with the user's emails -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
-=======
->>>>>>> 5529c2f7e602f1350590e1b223c5ce1a5ae62c25
 
     <application
         android:allowBackup="true"
@@ -26,13 +23,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-<<<<<<< HEAD
-        <activity
-            android:name=".LoginActivity"
-            android:label="@string/title_activity_login"></activity>
-=======
-        <activity android:name=".login.Login"></activity>
->>>>>>> 5529c2f7e602f1350590e1b223c5ce1a5ae62c25
     </application>
 
 </manifest>
