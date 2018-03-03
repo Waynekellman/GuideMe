@@ -47,6 +47,7 @@ public class FinancialAssistanceTab extends Fragment {
             public void onSuccessModel(List<FoodStampOfficeModel> foodStampOfficeModels) {
                 Log.d(TAG, "onSuccessModel: Food " + foodStampOfficeModels.get(0).getFacility_name());
 
+
             }
 
             @Override
