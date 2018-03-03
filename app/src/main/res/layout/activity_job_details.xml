@@ -14,7 +14,7 @@
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        tools:context="com.nyc.guideme.MapsActivity" />
+        tools:context="com.nyc.guideme.JobDetailsActivity" />
 
 
     <TextView
