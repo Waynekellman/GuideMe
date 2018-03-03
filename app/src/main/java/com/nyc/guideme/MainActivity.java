@@ -55,27 +55,6 @@ public class MainActivity extends AppCompatActivity implements JobTab.OnFragment
         });
 
 
-    }
-
-    @Override
-    public void onFragmentInteraction(Uri uri) {
-
-        setContentView(R.layout.activity_main);
-
-//        jobsNetworkListener = new RetrofitClient.JobsNetworkListener() {
-//            @Override
-//            public void onSuccessModel(List<JobModels> jobModels) {
-//                Log.d(TAG, "onSuccessModel: Jobs " + jobModels.get(0).getBusiness_title());
-//            }
-//
-//            @Override
-//            public void onFailure(Throwable t) {
-//                t.printStackTrace();
-//            }
-//        };
-//        RetrofitClient.getInstance().setJobsNetworkListener(jobsNetworkListener);
-//        RetrofitClient.getInstance().getJobModel();
-//
 //        medicaidNetworkListener = new RetrofitClient.MedicaidNetworkListener() {
 //            @Override
 //            public void onSuccessModel(List<MedicaidModels> medicaidModels) {
@@ -92,6 +71,12 @@ public class MainActivity extends AppCompatActivity implements JobTab.OnFragment
 //        RetrofitClient.getInstance().getMedicaidModel();
 //
 //
+
+
+    }
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
 
 
     }
