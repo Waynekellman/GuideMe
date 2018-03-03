@@ -1,6 +1,7 @@
 package com.nyc.guideme.network;
 
 import com.nyc.guideme.models.JobModels;
+import com.nyc.guideme.models.MedicaidModels;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -19,7 +20,8 @@ public class RetrofitClient {
     private static RetrofitClient retrofitClient;
     private Retrofit retrofit;
 
-    private RetrofitNetworkListener retrofitNetworkListener = null;
+    private JobsNetworkListener jobsNetworkListener = null;
+    private MedicaidNetworkListener medicaidNetworkListener = null;
 
 
     public static RetrofitClient getInstance() {
@@ -31,12 +33,20 @@ public class RetrofitClient {
         return retrofitClient;
     }
 
-    public RetrofitNetworkListener getRetrofitNetworkListener() {
-        return retrofitNetworkListener;
+    public JobsNetworkListener getJobsNetworkListener() {
+        return jobsNetworkListener;
     }
 
-    public void setRetrofitNetworkListener(RetrofitNetworkListener retrofitNetworkListener) {
-        this.retrofitNetworkListener = retrofitNetworkListener;
+    public void setJobsNetworkListener(JobsNetworkListener jobsNetworkListener) {
+        this.jobsNetworkListener = jobsNetworkListener;
+    }
+
+    public MedicaidNetworkListener getMedicaidNetworkListener() {
+        return medicaidNetworkListener;
+    }
+
+    public void setMedicaidNetworkListener(MedicaidNetworkListener medicaidNetworkListener) {
+        this.medicaidNetworkListener = medicaidNetworkListener;
     }
 
     public Retrofit buildRetrofit() {
@@ -59,15 +69,32 @@ public class RetrofitClient {
                 if (response.isSuccessful()) {
                     Log.d("onResponse: ", "Successful");
 
-                    if (retrofitNetworkListener != null) {
-                        retrofitNetworkListener.onSuccesModel(response.body());
+                    if (jobsNetworkListener != null) {
+                        jobsNetworkListener.onSuccesModel(response.body());
                     }
                 }
             }
 
             @Override
             public void onFailure(Call<JobModels> call, Throwable t) {
-                retrofitNetworkListener.onFailure(t);
+                jobsNetworkListener.onFailure(t);
+            }
+        });
+    }
+
+    public void getMedicaidModel() {
+
+        NYCJobService service = buildRetrofit().create(NYCJobService.class);
+        Call<MedicaidModels> getMedicaidModels = service.getMedicaidModels();
+        getMedicaidModels.enqueue(new Callback<MedicaidModels>() {
+            @Override
+            public void onResponse(Call<MedicaidModels> call, Response<MedicaidModels> response) {
+
+            }
+
+            @Override
+            public void onFailure(Call<MedicaidModels> call, Throwable t) {
+
             }
         });
     }
@@ -76,8 +103,15 @@ public class RetrofitClient {
         return retrofit;
     }
 
-    public interface RetrofitNetworkListener {
+    public interface JobsNetworkListener {
         void onSuccesModel(JobModels jobModels);
+
+        void onFailure(Throwable t);
+    }
+
+    public interface MedicaidNetworkListener {
+
+        void onSuccesModel(MedicaidModels medicaidModels);
 
         void onFailure(Throwable t);
     }
