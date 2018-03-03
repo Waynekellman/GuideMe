@@ -26,5 +26,9 @@
     <string name="salary_range">$100,000 - $150,000</string>
     <string name="full_part_time">Full time</string>
     <string name="days_left_to_apply">10 Days left</string>
+    <string name="fa_phone">212-321-9203</string>
+    <string name="fa_address">40-55 10th ave , Lower Level</string>
+    <string name="fa_zip">Manhattan , NY, 10034</string>
     <string name="business_title">Application Examiner, Bureau of Vital Statistics/Vital Statistics/Vital Records</string>
+    <string name="title_activity_maps">Map</string>
 </resources>
