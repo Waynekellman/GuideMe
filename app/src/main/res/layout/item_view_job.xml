@@ -27,6 +27,7 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textSize="16sp"
             android:textStyle="bold"
+            android:textColor="#000000"
             android:text="@string/deputy_director" />
 
 
@@ -36,6 +37,7 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textSize="16sp"
             android:textStyle="bold"
+            android:textColor="#000000"
             android:id="@+id/tv_civil_service_title"
             android:text="@string/administrative_project_manager"
             />
@@ -55,6 +57,7 @@
             android:layout_height="wrap_content"
             android:text="@string/work_location"
             android:id="@+id/location_id"
+            android:textColor="#000000"
 
             />
 
@@ -63,6 +66,7 @@
             android:id="@+id/full_time_part_time_indicator"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="#000000"
             android:text="@string/full_part_time"
 
             />
@@ -74,6 +78,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/days_left_to_apply"
+            android:textColor="#ff0000"
 
             />
 
@@ -97,6 +102,7 @@
                android:textStyle="bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+               android:textColor="#008000"
             android:text="@string/salary_range"
                android:paddingTop="50dp"
 
