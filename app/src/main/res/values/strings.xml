@@ -76,4 +76,7 @@
     <string name="web3">As shown in this Web Developer Resume example, web developers will need to focus on relevant skills, such as project management, SEO/SEM practices, image manipulation, programming skills, and website optimization skills.</string>
     <string name="web4">Take your Web Developer Resume to the next level by providing your industry experience in your Summary statement or within your Work Experience section.</string>
 
+
+    <!-- JobDetails Activity link-->
+    <string name="jobs_page">Apply Here with jobID&#160;<a href="https://a127-jobs.nyc.gov/">https://a127-jobs.nyc.gov/</a></string>
 </resources>
