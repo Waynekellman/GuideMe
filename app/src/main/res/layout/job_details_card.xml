@@ -1,20 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
+
     android:clipChildren="false"
-    tools:context=".JobDetailsActivity">
+    tools:context=".details.JobDetailsActivity">
 
-    <link.fls.swipestack.SwipeStack
-        android:id="@+id/swipeStack"
+    <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="1dp"
-        app:stack_rotation="0"
-        app:stack_spacing="14dp"
-        android:padding="10dp" />
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:cardElevation="10dp"
+        android:padding="3dp"
+        app:cardCornerRadius="5dp">
 
-</LinearLayout>
+        <link.fls.swipestack.SwipeStack
+            android:id="@+id/swipeStack"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginBottom="32dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="32dp"
+            app:stack_spacing="5dp"
+            android:padding="15dp"
+            app:stack_size="6"
+            app:stack_rotation="3" />
+        <de.hdodenhof.circleimageview.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/circle_id"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            app:civ_border_width="2dp"
+            android:layout_gravity="center"
+            app:civ_border_color="#000000"/>
+
+    </android.support.v7.widget.CardView>
+
+
+
+</FrameLayout>
