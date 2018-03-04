@@ -359,6 +359,16 @@
                 android:layout_height="wrap_content"
                 android:text="@string/post_until_text" />
 
+            <TextView
+                android:id="@+id/nyc_apply_site"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/jobs_page"/>
+            <TextView
+                android:id="@+id/job_id_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:autoLink="web"/>
 
         </LinearLayout>
 

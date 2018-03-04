@@ -6,6 +6,7 @@ import android.location.Address;
 import android.location.Geocoder;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.widget.TextView;
 
@@ -32,7 +33,7 @@ public class JobDetailsActivity extends AppCompatActivity implements OnMapReadyC
     private TextView businessTitle, civicTitle, divisionWorkUnit,
             salaryFrom, salaryTo, salaryFrequency, jobCategory,
             workLocation, fpIndicator, jobDescription, minimumQualification,
-            residencyReq, postUntil, postingDate, preferredSkills;
+            residencyReq, postUntil, postingDate, preferredSkills, jobId;
 
     private GoogleMap mMap;
     private Address location;
@@ -90,6 +91,9 @@ public class JobDetailsActivity extends AppCompatActivity implements OnMapReadyC
         postUntil.setText(job.getPost_until());
         postingDate.setText(job.getPosting_date());
         preferredSkills.setText(job.getPreferred_skills());
+        String jobIdString = "JobID: " + job.getJob_id();
+        jobId.setText(jobIdString);
+        jobId.setMovementMethod(LinkMovementMethod.getInstance());
     }
 
     private void initViews() {
@@ -108,6 +112,7 @@ public class JobDetailsActivity extends AppCompatActivity implements OnMapReadyC
         postUntil = findViewById(R.id.post_until_details);
         postingDate = findViewById(R.id.post_date_details);
         preferredSkills = findViewById(R.id.prefered_skills_details);
+        jobId = findViewById(R.id.job_id_details);
     }
 
     public Address getLocationFromAddress(String strAddress) throws IOException {
