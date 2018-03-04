@@ -4,10 +4,12 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.location.Address;
 import android.location.Geocoder;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.method.LinkMovementMethod;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -94,6 +96,15 @@ public class JobDetailsActivity extends AppCompatActivity implements OnMapReadyC
         String jobIdString = "JobID: " + job.getJob_id();
         jobId.setText(jobIdString);
         jobId.setMovementMethod(LinkMovementMethod.getInstance());
+        jobId.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String url = "https://a127-jobs.nyc.gov/";
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                startActivity(i);
+            }
+        });
     }
 
     private void initViews() {

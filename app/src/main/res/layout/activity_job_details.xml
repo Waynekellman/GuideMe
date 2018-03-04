@@ -8,6 +8,7 @@
     android:orientation="vertical"
     android:padding="15dp">
 
+
     <fragment xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:map="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
@@ -324,19 +325,6 @@
 
         </LinearLayout>
 
-        <!--
-
-    <TextView
-        android:id="@+id/jobs_id_apply"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/jobs_id_apply_text" />
-
-
-
-    -->
-
-
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -364,6 +352,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/jobs_page"/>
+
             <TextView
                 android:id="@+id/job_id_details"
                 android:layout_width="wrap_content"
