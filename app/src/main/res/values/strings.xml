@@ -53,4 +53,7 @@
     <string name="you_have_high_medical_bills">• You have high medical bills.</string>
     <string name="you_receive_supplemental_security_income_ssi">• You receive Supplemental Security Income (SSI).</string>
     <string name="you_meet_certain_financial_requirements">• You meet certain financial requirements.</string>
+
+    <!-- JobDetails Activity link-->
+    <string name="jobs_page">Apply Here with jobID&#160;<a href="https://a127-jobs.nyc.gov/">https://a127-jobs.nyc.gov/</a></string>
 </resources>
