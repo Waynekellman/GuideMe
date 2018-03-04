@@ -40,7 +40,7 @@ public class JobDetailsActivity extends AppCompatActivity implements OnMapReadyC
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.job_details_card);
+        setContentView(R.layout.activity_job_details);
         sharedPreferences = getSharedPreferences(SHARED_PREF_KEY, MODE_PRIVATE);
         SwipeStack swipeStack = (SwipeStack) findViewById(R.id.swipeStack);
 
@@ -48,9 +48,7 @@ public class JobDetailsActivity extends AppCompatActivity implements OnMapReadyC
         Intent intent = getIntent();
         if (intent.hasExtra("jobDetails")) {
             job = new Gson().fromJson(intent.getStringExtra("jobDetails"), JobModels.class);
-            List<JobModels> jobModelsTest=new ArrayList<>();
-            jobModelsTest.add(job);
-            swipeStack.setAdapter(new SwipeStackAdapter(jobModelsTest));
+//            swipeStack.setAdapter(new SwipeStackAdapter(jobModelsTest));
             SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.clear();
             editor.putString("jobDetails",intent.getStringExtra("jobDetails") );
@@ -61,15 +59,17 @@ public class JobDetailsActivity extends AppCompatActivity implements OnMapReadyC
         }
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-        /*
+
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map_details);
-        mapFragment.getMapAsync(this);
+        if (mapFragment != null) {
+            mapFragment.getMapAsync(this);
+        }
 
-        */
 
-//        initViews();
-//        setViews();
+
+        initViews();
+        setViews();
     }
 
     private void setViews() {
