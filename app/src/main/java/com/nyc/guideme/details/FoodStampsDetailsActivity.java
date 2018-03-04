@@ -25,7 +25,7 @@ public class FoodStampsDetailsActivity extends AppCompatActivity implements OnMa
         setContentView(R.layout.activity_food_stamps_details);
 
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.map_details);
+                .findFragmentById(R.id.financial_map_details);
         if (mapFragment != null) {
             mapFragment.getMapAsync(this);
         }

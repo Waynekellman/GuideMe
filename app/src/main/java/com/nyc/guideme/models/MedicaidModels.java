@@ -15,14 +15,14 @@ public class MedicaidModels {
     private String census_tract;
     private String community_board;
     private String community_council;
-    private String laitude;
+    private String latitude;
     private String longitude;
     private String name_of_medicaid_offices;
     private String nta;
     private String postcode;
     private String telephone_number;
 
-    // gettters for private fields:
+    // getters for private fields:
     public String getAddress() {
         return address;
     }
@@ -51,8 +51,8 @@ public class MedicaidModels {
         return community_council;
     }
 
-    public String getLaitude() {
-        return laitude;
+    public String getLatitude() {
+        return latitude;
     }
 
     public String getLongitude() {
@@ -105,8 +105,8 @@ public class MedicaidModels {
         this.community_council = community_council;
     }
 
-    public void setLaitude(String laitude) {
-        this.laitude = laitude;
+    public void setLatitude(String latitude) {
+        this.latitude = latitude;
     }
 
     public void setLongitude(String longitude) {
