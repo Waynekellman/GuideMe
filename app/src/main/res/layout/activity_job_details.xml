@@ -3,8 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
+    android:padding="15dp"
     tools:context="com.nyc.guideme.JobDetailsActivity">
 
     <fragment xmlns:android="http://schemas.android.com/apk/res/android"
@@ -22,67 +23,228 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="@string/business_title"
-        android:textSize="16sp"
+        android:text="@string/business_title_text"
+        android:textSize="18sp"
         android:textStyle="bold" />
+
+
     <TextView
         android:id="@+id/civic_title_details"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/civic_title_text"
+        android:textSize="18sp" />
+
     <TextView
         android:id="@+id/division_work_unit_details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/division_work_unit_text" />
+
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-    <TextView
-        android:id="@+id/salary_from_details"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-    <TextView
-        android:id="@+id/salary_to_details"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-    <TextView
-        android:id="@+id/salary_frequency_detail"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-    <TextView
-        android:id="@+id/job_category_details"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-    <TextView
-        android:id="@+id/work_location_details"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-    <TextView
-        android:id="@+id/full_part_indicator_details"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-    <TextView
-        android:id="@+id/job_description_details"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="salary from : "
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/salary_from_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:text="@string/salary_from_text"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="salary to : "
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/salary_to_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/salary_to_text"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="salary frequency : "
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/salary_frequency_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/salary_frequency_text"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="job category : "
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/job_category_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/job_category_text"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="address : "
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/work_location_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/work_location_text"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="position : "
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/full_part_indicator_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/full_part_time_text"
+            android:textSize="15sp"
+
+            />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="job description : "
+            android:textSize="16dp" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <TextView
+                android:id="@+id/job_description_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/job_description_text" />
+
+        </ScrollView>
+    </LinearLayout>
+
     <TextView
         android:id="@+id/minimum_req_details"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content"
+        android:text="@string/minimum_req_text" />
+
     <TextView
         android:id="@+id/residency_req_details"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content"
+        android:text="@string/residency_req_text" />
+
     <TextView
         android:id="@+id/post_until_details"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content"
+        android:text="@string/post_until_text" />
+
     <TextView
         android:id="@+id/post_date_details"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content"
+        android:text="@string/post_date_text" />
+
+
     <TextView
         android:id="@+id/prefered_skills_details"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content"
+        android:text="@string/preferred_skills_text" />
+
+
     <TextView
         android:id="@+id/jobs_id_apply"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content"
+        android:text="@string/jobs_id_apply_text" />
 </LinearLayout>
