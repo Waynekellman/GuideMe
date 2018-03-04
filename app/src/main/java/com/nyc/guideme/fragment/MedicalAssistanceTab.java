@@ -6,6 +6,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.nyc.guideme.R;
+import com.nyc.guideme.adapter.MedicaidAdapter;
 import com.nyc.guideme.details.MedicaidTipsActivity;
 import com.nyc.guideme.models.JobModels;
 import com.nyc.guideme.models.MedicaidModels;
@@ -27,6 +30,8 @@ public class MedicalAssistanceTab extends Fragment {
 
     private static final String TAG = "MedicaidTab";
     private Button eligibilityBt;
+    private RecyclerView medicaidRecyclerView;
+    private MedicaidAdapter medicaidAdapter;
     private OnFragmentInteractionListener mListener;
     private RetrofitClient.MedicaidNetworkListener medicaidNetworkListener;
 
@@ -41,12 +46,19 @@ public class MedicalAssistanceTab extends Fragment {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_medical_assistance_tab, container, false);
         eligibilityBt = rootView.findViewById(R.id.medical_tips_bt);
+
         eligibilityBt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getActivity(), MedicaidTipsActivity.class));
             }
         });
+
+        // inflate the recycler view:
+        medicaidRecyclerView = rootView.findViewById(R.id.medicaid_recyler_view);
+        LinearLayoutManager medicaidLayoutManager = new LinearLayoutManager(getActivity());
+        medicaidRecyclerView.setLayoutManager(medicaidLayoutManager);
+
 
         return rootView;
     }
@@ -61,11 +73,15 @@ public class MedicalAssistanceTab extends Fragment {
 
                 Log.d(TAG, "onSuccessModel: Medicaid " + medicaidModels.get(0).getAddress());
                 // TODO: Set the adapter in here
+
+                medicaidAdapter = new MedicaidAdapter(medicaidModels);
+                medicaidRecyclerView.setAdapter(medicaidAdapter);
             }
 
             @Override
             public void onFailure(Throwable t) {
 
+                t.printStackTrace();
             }
         };
         RetrofitClient.getInstance().setMedicaidNetworkListener(medicaidNetworkListener);
