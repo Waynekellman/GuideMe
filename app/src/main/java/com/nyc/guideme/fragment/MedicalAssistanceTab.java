@@ -1,6 +1,7 @@
 package com.nyc.guideme.fragment;
 
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -9,8 +10,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.nyc.guideme.R;
+import com.nyc.guideme.details.MedicaidTipsActivity;
 import com.nyc.guideme.models.JobModels;
 import com.nyc.guideme.models.MedicaidModels;
 import com.nyc.guideme.network.RetrofitClient;
@@ -23,6 +26,7 @@ import java.util.List;
 public class MedicalAssistanceTab extends Fragment {
 
     private static final String TAG = "MedicaidTab";
+    private Button eligibilityBt;
     private OnFragmentInteractionListener mListener;
     private RetrofitClient.MedicaidNetworkListener medicaidNetworkListener;
 
@@ -35,7 +39,16 @@ public class MedicalAssistanceTab extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_medical_assistance_tab, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_medical_assistance_tab, container, false);
+        eligibilityBt = rootView.findViewById(R.id.medical_tips_bt);
+        eligibilityBt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), MedicaidTipsActivity.class));
+            }
+        });
+
+        return rootView;
     }
 
     @Override
@@ -63,5 +76,10 @@ public class MedicalAssistanceTab extends Fragment {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
+
+
+//    public void eligibilityOnClick(View view) {
+//
+//    }
 
 }

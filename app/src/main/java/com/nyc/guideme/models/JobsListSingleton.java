@@ -11,6 +11,7 @@ public class JobsListSingleton {
 
     private static JobsListSingleton jobsListSingleton;
     private List<JobModels> jobModelsArrayList;
+    private int position;
 
     public static JobsListSingleton getInstance() {
         if (jobsListSingleton == null) {
@@ -19,6 +20,14 @@ public class JobsListSingleton {
         }
         return jobsListSingleton;
 
+    }
+
+    public int getPosition() {
+        return position;
+    }
+
+    public void setPosition(int position) {
+        this.position = position;
     }
 
     public void setJobModelsArrayList(List<JobModels> jobModelsArrayList) {
