@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.google.gson.Gson;
-import com.nyc.guideme.JobDetailsActivity;
+import com.nyc.guideme.details.JobDetailsActivity;
 import com.nyc.guideme.R;
 import com.nyc.guideme.models.JobModels;
 
