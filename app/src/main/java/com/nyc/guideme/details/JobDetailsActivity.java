@@ -10,6 +10,8 @@ import android.os.Bundle;
 import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewTreeObserver;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -36,6 +38,7 @@ public class JobDetailsActivity extends AppCompatActivity implements OnMapReadyC
             salaryFrom, salaryTo, salaryFrequency, jobCategory,
             workLocation, fpIndicator, jobDescription, minimumQualification,
             residencyReq, postUntil, postingDate, preferredSkills, jobId;
+    private ScrollView scrollView;
 
     private GoogleMap mMap;
     private Address location;
@@ -96,15 +99,34 @@ public class JobDetailsActivity extends AppCompatActivity implements OnMapReadyC
         String jobIdString = "JobID: " + job.getJob_id();
         jobId.setText(jobIdString);
         jobId.setMovementMethod(LinkMovementMethod.getInstance());
-        jobId.setOnClickListener(new View.OnClickListener() {
+        //
+        scrollView.getViewTreeObserver().addOnScrollChangedListener(new ViewTreeObserver.OnScrollChangedListener() {
             @Override
-            public void onClick(View view) {
-                String url = "https://a127-jobs.nyc.gov/";
-                Intent i = new Intent(Intent.ACTION_VIEW);
-                i.setData(Uri.parse(url));
-                startActivity(i);
+            public void onScrollChanged() {
+                if (scrollView != null) {
+                    if (scrollView.getChildAt(0).getBottom() <= (scrollView.getHeight() + scrollView.getScrollY())) {
+                        jobId.setVisibility(View.VISIBLE);
+                        jobId.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                String url = "https://a127-jobs.nyc.gov/";
+                                Intent i = new Intent(Intent.ACTION_VIEW);
+                                i.setData(Uri.parse(url));
+                                startActivity(i);
+                            }
+                        });
+                        //scroll view is at bottom
+                    } else {
+                        jobId.setVisibility(View.INVISIBLE);
+                        //scroll view is not at bottom
+                    }
+                }
             }
         });
+
+
+        //
+
     }
 
     private void initViews() {
@@ -124,6 +146,8 @@ public class JobDetailsActivity extends AppCompatActivity implements OnMapReadyC
         postingDate = findViewById(R.id.post_date_details);
         preferredSkills = findViewById(R.id.prefered_skills_details);
         jobId = findViewById(R.id.job_id_details);
+        scrollView=findViewById(R.id.scrollView);
+        jobId.setVisibility(View.INVISIBLE);
     }
 
     public Address getLocationFromAddress(String strAddress) throws IOException {
