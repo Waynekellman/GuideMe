@@ -50,4 +50,7 @@
     <string name="fa_zip">Manhattan , NY, 10034</string>
     <string name="business_title_text">Application Examiner, Bureau of Vital Statistics/Vital Statistics/Vital Records</string>
     <string name="title_activity_maps">Map</string>
+    <string name="you_have_high_medical_bills">• You have high medical bills.</string>
+    <string name="you_receive_supplemental_security_income_ssi">• You receive Supplemental Security Income (SSI).</string>
+    <string name="you_meet_certain_financial_requirements">• You meet certain financial requirements.</string>
 </resources>

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@color/colorLightLightGrey"
     android:orientation="vertical"
     android:padding="15dp">
 
@@ -16,12 +17,29 @@
         android:layout_height="200dp"
         tools:context="com.nyc.guideme.details.JobDetailsActivity" />
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:background="@color/colorLightLightGrey"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:padding="10dp">
     <TextView
+        android:textColor="@color/colorBlackk"
         android:id="@+id/business_title_details"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
+        android:layout_gravity="center"
         android:text="@string/business_title_text"
         android:textSize="18sp"
         android:textStyle="bold" />
@@ -32,39 +50,42 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:textColor="@color/colorBlackk"
         android:text="@string/civic_title_text"
-        android:textSize="18sp" />
+        android:textStyle="normal"
+        android:textSize="17sp" />
 
     <TextView
         android:id="@+id/division_work_unit_details"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:textStyle="italic"
         android:text="@string/division_work_unit_text" />
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="horizontal">
+        </LinearLayout>
+
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:padding="10dp">
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/colorLightBlue"
                 android:text="salary from : "
+                android:textStyle="bold"
                 android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/salary_from_details"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="20dp"
+                android:textStyle="bold"
                 android:text="@string/salary_from_text"
                 android:textSize="15sp" />
         </LinearLayout>
@@ -73,13 +94,15 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:padding="10dp">
 
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="@color/colorLightBlue"
+                android:textStyle="bold"
                 android:text="salary to : "
                 android:textSize="15sp" />
 
@@ -88,30 +111,34 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/salary_to_text"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                android:textStyle="bold"/>
 
         </LinearLayout>
 
-    </LinearLayout>
+
 
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:padding="10dp">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/colorLightBlue"
+            android:textStyle="bold"
             android:text="salary frequency : "
             android:textSize="15sp" />
 
         <TextView
             android:id="@+id/salary_frequency_detail"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/salary_frequency_text"
+            android:textStyle="bold"
             android:textSize="15sp" />
     </LinearLayout>
 
@@ -119,20 +146,23 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:padding="10dp">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/colorLightBlue"
+            android:textStyle="bold"
             android:text="job category : "
             android:textSize="15sp" />
 
         <TextView
             android:id="@+id/job_category_details"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/job_category_text"
+            android:textStyle="bold"
             android:textSize="15sp" />
 
     </LinearLayout>
@@ -140,20 +170,23 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:padding="10dp">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/colorLightBlue"
             android:text="address : "
+            android:textStyle="bold"
             android:textSize="15sp" />
 
         <TextView
             android:id="@+id/work_location_details"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/work_location_text"
+            android:textStyle="bold"
             android:textSize="15sp" />
 
     </LinearLayout>
@@ -161,89 +194,175 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:padding="10dp">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/colorLightBlue"
+            android:textStyle="bold"
             android:text="position : "
             android:textSize="15sp" />
 
         <TextView
             android:id="@+id/full_part_indicator_details"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/full_part_time_text"
+            android:textStyle="bold"
             android:textSize="15sp"
 
             />
     </LinearLayout>
 
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:orientation="vertical"
-        android:padding="20dp">
 
-        <TextView
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-            android:text="job description : "
-            android:textSize="16dp" />
-
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:fillViewport="true">
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:padding="10dp">
 
             <TextView
-                android:id="@+id/job_description_details"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/job_description_text" />
+                android:layout_marginBottom="5dp"
+                android:textColor="@color/colorLightBlue"
+                android:textStyle="bold"
+                android:text="minimum qualifications : "
+                android:textSize="16dp" />
 
-        </ScrollView>
-    </LinearLayout>
 
-    <TextView
+
+            <TextView
         android:id="@+id/minimum_req_details"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/minimum_req_text" />
+                android:textStyle="bold"
 
-    <TextView
+                android:text="@string/minimum_req_text" />
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorLightBlue"
+                android:layout_marginBottom="5dp"
+                android:textStyle="bold"
+                android:text="residency requirence : "
+                android:textSize="16dp" />
+
+        <TextView
         android:id="@+id/residency_req_details"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/residency_req_text" />
+            android:textStyle="bold"
+            android:text="@string/residency_req_text" />
+        </LinearLayout>
 
-    <TextView
-        android:id="@+id/post_until_details"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/post_until_text" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:padding="10dp">
 
-    <TextView
-        android:id="@+id/post_date_details"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/post_date_text" />
-
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:textStyle="bold"
+                android:textColor="@color/colorLightBlue"
+                android:text="preferred skills : "
+                android:textSize="16dp" />
 
     <TextView
         android:id="@+id/prefered_skills_details"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textStyle="bold"
         android:text="@string/preferred_skills_text" />
+        </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:textStyle="bold"
+                android:textColor="@color/colorLightBlue"
+                android:text="job description : "
+                android:textSize="16dp" />
+
+
+
+            <TextView
+                android:id="@+id/job_description_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+
+                android:text="@string/job_description_text" />
+
+        </LinearLayout>
+
+        <!--
 
     <TextView
         android:id="@+id/jobs_id_apply"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/jobs_id_apply_text" />
+
+
+
+    -->
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/post_date_details"
+                android:layout_width="match_parent"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorLightBlue"
+                android:text="post until: " />
+
+            <TextView
+                android:id="@+id/post_until_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/post_until_text" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+   </ScrollView>
 </LinearLayout>
