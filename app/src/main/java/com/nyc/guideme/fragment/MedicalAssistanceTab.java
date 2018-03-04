@@ -13,8 +13,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.nyc.guideme.R;
-import com.nyc.guideme.details.MedicaidTipsActivity;
-import com.nyc.guideme.models.JobModels;
+import com.nyc.guideme.eligibility.MedicaidEligibility;
 import com.nyc.guideme.models.MedicaidModels;
 import com.nyc.guideme.network.RetrofitClient;
 
@@ -44,7 +43,7 @@ public class MedicalAssistanceTab extends Fragment {
         eligibilityBt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getActivity(), MedicaidTipsActivity.class));
+                startActivity(new Intent(getActivity(), MedicaidEligibility.class));
             }
         });
 
