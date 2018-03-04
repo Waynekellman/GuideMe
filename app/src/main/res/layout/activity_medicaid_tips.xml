@@ -7,15 +7,32 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/medicaid_tips_activity_2"
     tools:context="com.nyc.guideme.details.MedicaidTipsActivity">
+
+
+    <ScrollView
+        android:fillViewport="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+     <LinearLayout
+         android:padding="15dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+
 
 
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:padding="10dp"
-        app:cardCornerRadius="10dp"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        app:cardUseCompatPadding="true"
+        app:cardCornerRadius="15dp"
         >
 
         <LinearLayout
@@ -27,7 +44,7 @@
             android:text="What Is Medicaid?"
             android:textStyle="bold"
             android:textSize="20sp"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/colorBlackk"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
@@ -42,7 +59,7 @@
                 android:text="How do I know if I qualify for Medicaid?"
                 android:textStyle="bold"
                 android:textSize="20sp"
-                android:textColor="@color/colorPrimary"
+                android:textColor="@color/colorBlackk"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
@@ -56,23 +73,23 @@
 
 
             <TextView
-                android:text="  •	You have high medical bills."
+                android:text="@string/you_have_high_medical_bills"
                 android:textStyle="normal"
-                android:textSize="16sp"
+                android:textSize="14sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
             <TextView
-                android:text="	•	You receive Supplemental Security Income (SSI)."
+                android:text="@string/you_receive_supplemental_security_income_ssi"
                 android:textStyle="normal"
-                android:textSize="16sp"
+                android:textSize="14sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
             <TextView
-                android:text="  •	You meet certain financial requirements."
+                android:text="@string/you_meet_certain_financial_requirements"
                 android:textStyle="normal"
-                android:textSize="16sp"
+                android:textSize="14sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
@@ -80,107 +97,252 @@
 
     </android.support.v7.widget.CardView>
 
-    <ScrollView
-        android:fillViewport="true"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
+         <android.support.v7.widget.CardView
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:padding="10dp"
+             app:cardUseCompatPadding="true"
+             app:cardCornerRadius="10dp"
+             >
 
-    <android.support.v7.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        app:cardCornerRadius="10dp"
-        >
+             <LinearLayout
+                 android:orientation="vertical"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:padding="18dp">
+                 <TextView
+                     android:text="How do I apply for Medicaid?"
+                     android:textStyle="bold"
+                     android:textSize="20sp"
+                     android:textColor="@color/colorBlackk"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content" />
 
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="18dp">
-            <TextView
-                android:text="How do I apply for Medicaid?"
-                android:textStyle="bold"
-                android:textSize="20sp"
-                android:textColor="@color/colorPrimary"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-            <TextView
-                android:text="You may apply for Medicaid in the following ways:"
-                android:textStyle="bold"
-                android:textSize="16sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                 <TextView
+                     android:text="You may apply for Medicaid in the following ways:"
+                     android:textStyle="bold"
+                     android:textSize="16sp"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content" />
 
 
 
-            <TextView
-                android:text="  •	NY State Of Health"
-                android:textStyle="normal"
-                android:textSize="16sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                 <TextView
+                     android:text="  •	NY State Of Health"
+                     android:textStyle="normal"
+                     android:textSize="14sp"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content" />
 
 
-            <TextView
-                android:text="  •	The Official Health Plan Marketplace"
-                android:textStyle="normal"
-                android:textSize="16sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                 <TextView
+                     android:text="  •	The Official Health Plan Marketplace"
+                     android:textStyle="normal"
+                     android:textSize="14sp"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content" />
 
-            <TextView
-                android:text="  •	Managed Care Organization"
-                android:textStyle="normal"
-                android:textSize="16sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                 <TextView
+                     android:text="  •	Managed Care Organization"
+                     android:textStyle="normal"
+                     android:textSize="14sp"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content" />
 
-            <TextView
-                android:text="  •	Navigators &amp; Certified Application Counselors"
-                android:textStyle="normal"
-                android:textSize="16sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                 <TextView
+                     android:text="  •	Navigators &amp; Certified Application Counselors"
+                     android:textStyle="normal"
+                     android:textSize="14sp"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content" />
 
 
-            <TextView
-                android:text="  •	Medicaid Helpline - (800) 541 - 2831"
-                android:textStyle="normal"
-                android:textSize="16sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                 <TextView
+                     android:text="  •	Medicaid Helpline - (800) 541 - 2831"
+                     android:textStyle="normal"
+                     android:textSize="14sp"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content" />
 
-            <TextView
-                android:text="  	•	Local District Social Services Offices
+                 <TextView
+                     android:text="  •	Local District Social Services Offices
 "
-                android:textStyle="normal"
-                android:textSize="16sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                     android:textStyle="normal"
+                     android:textSize="14sp"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content" />
 
-            <TextView
-                android:text="Where you apply for Medicaid will depend on your category. Your category might be single, childless couples, pregnant women, parent(s) and caretaker relatives with dependent children, elderly and/or disabled."
-                android:textStyle="normal"
-                android:textSize="16sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                 <TextView
+                     android:text="Where you apply for Medicaid will depend on your category. Your category might be single, childless couples, pregnant women, parent(s) and caretaker relatives with dependent children, elderly and/or disabled."
+                     android:textStyle="normal"
+                     android:textSize="15sp"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content" />
 
 
-            <TextView
-                android:text="The Marketplace, (NY State of Health) determines eligibility using Modified Adjusted Gross Income (MAGI) Rules. In general, income is counted with the same rules as the Internal Revenue Service (IRS) with minor variations. Applications may be completed online, in person with a navigator or certified application counselor, by mail and by phone."
-                android:textStyle="bold"
-                android:textSize="16sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                 <TextView
+                     android:text="The Marketplace, (NY State of Health) determines eligibility using Modified Adjusted Gross Income (MAGI) Rules. In general, income is counted with the same rules as the Internal Revenue Service (IRS) with minor variations. Applications may be completed online, in person with a navigator or certified application counselor, by mail and by phone."
+                     android:textStyle="bold"
+                     android:textSize="16sp"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content" />
 
-        </LinearLayout>
+             </LinearLayout>
 
-    </android.support.v7.widget.CardView>
+         </android.support.v7.widget.CardView>
+
+
+         <android.support.v7.widget.CardView
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:padding="10dp"
+             app:cardUseCompatPadding="true"
+             app:cardCornerRadius="10dp"
+             >
+
+             <LinearLayout
+                 android:orientation="vertical"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:padding="18dp">
+                 <TextView
+                     android:text="The following individuals should apply in the Marketplace:"
+                     android:textStyle="bold"
+                     android:textSize="18sp"
+                     android:textColor="@color/colorBlackk"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content" />
+
+                 <TextView
+                     android:text="(NY State of Health):"
+                     android:textStyle="bold"
+                     android:textSize="16sp"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content" />
+
+
+
+                 <TextView
+                     android:id="@+id/ny_state_of_health"
+                     android:text="  •	Adults (not pregnant) and aged 19-64, not eligible for Medicare"
+                     android:textStyle="normal"
+                     android:textSize="14sp"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content" />
+
+
+                 <TextView
+                     android:text="  •	Pregnant Women and Infants"
+                     android:textStyle="normal"
+                     android:textSize="14sp"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content" />
+
+                 <TextView
+                     android:text="  •	Children ages 1 - 18; and"
+                     android:textStyle="normal"
+                     android:textSize="14sp"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content" />
+
+                 <TextView
+                     android:text=" 	•	Parents and Caretaker Relatives"
+                     android:textStyle="normal"
+                     android:textSize="14sp"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content" />
+
+             </LinearLayout>
+
+         </android.support.v7.widget.CardView>
+
+
+
+         <android.support.v7.widget.CardView
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:padding="10dp"
+             app:cardUseCompatPadding="true"
+             app:cardCornerRadius="10dp"
+             >
+
+             <LinearLayout
+                 android:orientation="vertical"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:padding="18dp">
+                 <TextView
+                     android:text="The following individuals should apply with their Local Department of Social Services (LDSS):"
+                     android:textStyle="bold"
+                     android:textSize="17sp"
+                     android:textColor="@color/colorBlackk"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content" />
+
+
+                 <TextView
+                     android:text="  •	Individuals age 65 and older, who are not parents or caretaker relatives, when age is a condition of eligibility;"
+                     android:textStyle="normal"
+                     android:textSize="14sp"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content" />
+
+
+                 <TextView
+                     android:text="  •	Medicare Savings Program (MSP);"
+                     android:textStyle="normal"
+                     android:textSize="14sp"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content" />
+
+                 <TextView
+                     android:text="  •	Medicaid Buy-In for Working People with Disabilities enrollees (MBI-WPD);"
+                     android:textStyle="normal"
+                     android:textSize="14sp"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content" />
+
+                 <TextView
+                     android:text="  •	Former Foster Care youth;"
+                     android:textStyle="normal"
+                     android:textSize="14sp"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content" />
+
+                 <TextView
+                     android:text="  •	Residents of adult homes and nursing homes;"
+                     android:textStyle="normal"
+                     android:textSize="14sp"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content" />
+                 <TextView
+                     android:text="  •	Residential treatment center/community residences operated by The Office of Mental Health (OMH)"
+                     android:textStyle="normal"
+                     android:textSize="14sp"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content" />
+
+                 <TextView
+                     android:text="  •	Presumptive Eligibility (PE) for Pregnant Women apply with provider, processed by the LDSS."
+                     android:textStyle="normal"
+                     android:textSize="14sp"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content" />
+
+
+             </LinearLayout>
+
+         </android.support.v7.widget.CardView>
+
+
+
+
+
+     </LinearLayout>
+
 
     </ScrollView>
-
 
 
 
