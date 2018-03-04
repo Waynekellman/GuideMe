@@ -6,8 +6,7 @@
     android:layout_height="wrap_content"
     android:background="@color/colorLightLightGrey"
     android:orientation="vertical"
-    android:padding="15dp"
-    android:background="#fff">
+    android:padding="15dp">
 
     <fragment xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:map="http://schemas.android.com/apk/res-auto"
