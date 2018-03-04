@@ -1,4 +1,4 @@
-package com.nyc.guideme;
+package com.nyc.guideme.details;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -6,6 +6,7 @@ import android.location.Address;
 import android.location.Geocoder;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -15,14 +16,15 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.gson.Gson;
-import com.nyc.guideme.adapter.SwipeStackAdapter;
+import com.nyc.guideme.R;
 import com.nyc.guideme.models.JobModels;
+import com.nyc.guideme.models.JobsListSingleton;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 import link.fls.swipestack.SwipeStack;
+
 
 public class JobDetailsActivity extends AppCompatActivity implements OnMapReadyCallback {
 
@@ -36,6 +38,7 @@ public class JobDetailsActivity extends AppCompatActivity implements OnMapReadyC
     private Address location;
     private SharedPreferences sharedPreferences;
     private final String SHARED_PREF_KEY = "shaered_pref_details_activity";
+    private final String TAG = "JobsDetailsActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,13 +51,14 @@ public class JobDetailsActivity extends AppCompatActivity implements OnMapReadyC
         Intent intent = getIntent();
         if (intent.hasExtra("jobDetails")) {
             job = new Gson().fromJson(intent.getStringExtra("jobDetails"), JobModels.class);
-//            swipeStack.setAdapter(new SwipeStackAdapter(jobModelsTest));
+            Log.d(TAG, "onCreate: " + job.getBusiness_title());
+            //            swipeStack.setAdapter(new SwipeStackAdapter(jobModelsTest));
             SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.clear();
-            editor.putString("jobDetails",intent.getStringExtra("jobDetails") );
+            editor.putString("jobDetails", intent.getStringExtra("jobDetails"));
         }
 
-        if (!sharedPreferences.getString("jobDetails", "").equals("")){
+        if (!sharedPreferences.getString("jobDetails", "").equals("")) {
             job = new Gson().fromJson(sharedPreferences.getString("jobDetails", ""), JobModels.class);
         }
 
@@ -65,7 +69,6 @@ public class JobDetailsActivity extends AppCompatActivity implements OnMapReadyC
         if (mapFragment != null) {
             mapFragment.getMapAsync(this);
         }
-
 
 
         initViews();
@@ -129,7 +132,7 @@ public class JobDetailsActivity extends AppCompatActivity implements OnMapReadyC
         mMap = googleMap;
         try {
             location = getLocationFromAddress(job.getWork_location());
-            LatLng jobMarker = new LatLng(location.getLatitude(),location.getLongitude());
+            LatLng jobMarker = new LatLng(location.getLatitude(), location.getLongitude());
             mMap.addMarker(new MarkerOptions().position(jobMarker).title(job.getAgency()));
             float zoomLevel = (float) 14.0; //This goes up to 21
             mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(jobMarker, zoomLevel));
@@ -138,3 +141,4 @@ public class JobDetailsActivity extends AppCompatActivity implements OnMapReadyC
         }
     }
 }
+

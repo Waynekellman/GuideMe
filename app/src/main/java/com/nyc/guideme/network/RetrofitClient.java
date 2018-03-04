@@ -9,7 +9,6 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
-
 import java.util.List;
 
 
@@ -20,6 +19,7 @@ import java.util.List;
 public class RetrofitClient {
     private static RetrofitClient retrofitClient;
     private Retrofit retrofit;
+    public List<JobModels> jobModels;
 
     private JobsNetworkListener jobsNetworkListener = null;
     private MedicaidNetworkListener medicaidNetworkListener = null;
@@ -64,6 +64,7 @@ public class RetrofitClient {
             @Override
             public void onResponse(Call<List<JobModels>> call, Response<List<JobModels>> response) {
                 jobsNetworkListener.onSuccessModel(response.body());
+                jobModels = response.body();
             }
 
             @Override
