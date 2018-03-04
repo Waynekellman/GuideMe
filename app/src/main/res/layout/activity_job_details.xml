@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@color/colorLightLightGrey"
     android:orientation="vertical"
     android:padding="15dp">
 
@@ -24,6 +25,7 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="wrap_content"
+        android:background="@color/colorLightLightGrey"
         android:layout_height="wrap_content">
 
         <LinearLayout
@@ -48,6 +50,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:textColor="@color/colorBlackk"
         android:text="@string/civic_title_text"
         android:textStyle="normal"
         android:textSize="17sp" />
@@ -57,6 +60,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:textStyle="italic"
         android:text="@string/division_work_unit_text" />
 
 
@@ -74,13 +78,13 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/colorLightBlue"
                 android:text="salary from : "
+                android:textStyle="bold"
                 android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/salary_from_details"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/colorLightGrey"
                 android:textStyle="bold"
                 android:text="@string/salary_from_text"
                 android:textSize="15sp" />
@@ -98,7 +102,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/colorLightBlue"
-
+                android:textStyle="bold"
                 android:text="salary to : "
                 android:textSize="15sp" />
 
@@ -108,7 +112,6 @@
                 android:layout_height="wrap_content"
                 android:text="@string/salary_to_text"
                 android:textSize="15sp"
-                android:textColor="@color/colorLightGrey"
                 android:textStyle="bold"/>
 
         </LinearLayout>
@@ -126,7 +129,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/colorLightBlue"
-
+            android:textStyle="bold"
             android:text="salary frequency : "
             android:textSize="15sp" />
 
@@ -150,7 +153,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/colorLightBlue"
-
+            android:textStyle="bold"
             android:text="job category : "
             android:textSize="15sp" />
 
@@ -175,6 +178,7 @@
             android:layout_height="wrap_content"
             android:textColor="@color/colorLightBlue"
             android:text="address : "
+            android:textStyle="bold"
             android:textSize="15sp" />
 
         <TextView
@@ -197,6 +201,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/colorLightBlue"
+            android:textStyle="bold"
             android:text="position : "
             android:textSize="15sp" />
 
@@ -225,7 +230,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:textColor="@color/colorLightBlue"
-
+                android:textStyle="bold"
                 android:text="minimum qualifications : "
                 android:textSize="16dp" />
 
@@ -255,6 +260,7 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/colorLightBlue"
                 android:layout_marginBottom="5dp"
+                android:textStyle="bold"
                 android:text="residency requirence : "
                 android:textSize="16dp" />
 
@@ -277,6 +283,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
+                android:textStyle="bold"
                 android:textColor="@color/colorLightBlue"
                 android:text="preferred skills : "
                 android:textSize="16dp" />
@@ -300,6 +307,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
+                android:textStyle="bold"
                 android:textColor="@color/colorLightBlue"
                 android:text="job description : "
                 android:textSize="16dp" />
@@ -340,6 +348,7 @@
                 android:id="@+id/post_date_details"
                 android:layout_width="match_parent"
                 android:textSize="15sp"
+                android:textStyle="bold"
                 android:layout_height="wrap_content"
                 android:textColor="@color/colorLightBlue"
                 android:text="post until: " />
