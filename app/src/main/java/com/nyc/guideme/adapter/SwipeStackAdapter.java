@@ -44,7 +44,9 @@ public class SwipeStackAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         //
-        convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_job_details, parent, false);
+        if (convertView == null) {
+            convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_job_details, parent, false);
+        }
         initViews(convertView);
         setViews(jobModels, position);
         return convertView;
