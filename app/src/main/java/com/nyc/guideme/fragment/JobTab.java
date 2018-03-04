@@ -1,6 +1,7 @@
 package com.nyc.guideme.fragment;
 
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -11,9 +12,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.nyc.guideme.R;
 import com.nyc.guideme.adapter.JobAdapter;
+import com.nyc.guideme.details.MedicaidTipsActivity;
+import com.nyc.guideme.eligibility.ResumeBuilder;
 import com.nyc.guideme.models.JobModels;
 import com.nyc.guideme.network.RetrofitClient;
 
@@ -28,6 +32,8 @@ public class JobTab extends Fragment {
     private RecyclerView jobRecyclerView;
     private OnFragmentInteractionListener mListener;
     private RetrofitClient.JobsNetworkListener jobsNetworkListener;
+    private Button jobResumeButton;
+
 
     public JobTab() {
         // Required empty public constructor
@@ -43,7 +49,16 @@ public class JobTab extends Fragment {
         LinearLayoutManager jobLayoutManger = new LinearLayoutManager(getActivity());
         jobRecyclerView.setLayoutManager(jobLayoutManger);
 
+        jobResumeButton = rootView.findViewById(R.id.job_resume_btn);
+        jobResumeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), ResumeBuilder.class));
+            }
+        });
+
         return rootView;
+
     }
 
     @Override
