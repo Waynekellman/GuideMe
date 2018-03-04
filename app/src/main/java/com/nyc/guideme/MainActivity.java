@@ -49,6 +49,5 @@ public class MainActivity extends AppCompatActivity implements JobTab.OnFragment
     @Override
     public void onFragmentInteraction(Uri uri) {
 
-
     }
 }
