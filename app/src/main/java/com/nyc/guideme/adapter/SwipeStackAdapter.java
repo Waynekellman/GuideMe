@@ -6,6 +6,9 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
 import com.nyc.guideme.R;
 import com.nyc.guideme.models.JobModels;
 
@@ -87,4 +90,5 @@ public class SwipeStackAdapter extends BaseAdapter {
         postingDate.setText(job.getPosting_date());
         preferredSkills.setText(job.getPreferred_skills());
     }
+
 }

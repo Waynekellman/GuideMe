@@ -31,6 +31,7 @@ public class JobDetailsActivity extends AppCompatActivity {
         Log.d(TAG, "onCreate: " + jobModelsList.get(0).getBusiness_title());
         Log.d(TAG, "onCreate: " + String.valueOf(jobModelsList.size()));
         swipeStack.setAdapter(new SwipeStackAdapter(jobModelsList));
+
     }
 
     public Address getLocationFromAddress(String strAddress) throws IOException {
