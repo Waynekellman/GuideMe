@@ -11,6 +11,7 @@ public class JobsListSingleton {
 
     private static JobsListSingleton jobsListSingleton;
     private List<JobModels> jobModelsArrayList;
+
     public static JobsListSingleton getInstance() {
         if (jobsListSingleton == null) {
             jobsListSingleton = new JobsListSingleton();
