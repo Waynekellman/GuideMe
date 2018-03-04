@@ -1,12 +1,15 @@
 package com.nyc.guideme.adapter;
 
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
 import com.nyc.guideme.R;
+import com.nyc.guideme.details.FoodStampsDetailsActivity;
 import com.nyc.guideme.models.FoodStampOfficeModel;
 
 import java.util.List;
@@ -31,10 +34,19 @@ public class FinancialAdapter extends RecyclerView.Adapter<FinancialAdapter.View
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(final ViewHolder holder, final int position) {
         holder.medicalCenter.setText(foodStampOfficeModel.get(position).getFacility_name());
         holder.fpIndicator.setText(foodStampOfficeModel.get(position).getState());
         holder.postUntil.setText(foodStampOfficeModel.get(position).getStreet_address());
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(holder.itemView.getContext(), FoodStampsDetailsActivity.class);
+                String foodStampsJSON = new Gson().toJson(foodStampOfficeModel.get(position));
+                intent.putExtra("FoodStamps", foodStampsJSON);
+                holder.itemView.getContext().startActivity(intent);
+            }
+        });
     }
 
     @Override
