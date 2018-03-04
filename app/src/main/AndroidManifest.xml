@@ -45,7 +45,8 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity android:name=".details.MedicaidTipsActivity"></activity>
+        <activity android:name=".details.MedicaidTipsActivity" />
+        <activity android:name=".details.MedicaidDetailActivity"></activity>
     </application>
 
 </manifest>
