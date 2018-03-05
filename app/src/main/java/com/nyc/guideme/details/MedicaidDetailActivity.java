@@ -44,6 +44,11 @@ public class MedicaidDetailActivity extends AppCompatActivity implements OnMapRe
         }
         Intent intent = getIntent();
         medicaidOffice = new Gson().fromJson(intent.getStringExtra("medicaidDetails"), MedicaidModels.class);
+        medicalOfficeName.setText(medicaidOffice.getName_of_medicaid_offices());
+        medicalOfficeAddress.setText(medicaidOffice.getAddress());
+        medicalOfficeBorough.setText(medicaidOffice.getBorough());
+        medicaidOfficeZipCode.setText(medicaidOffice.getPostcode());
+        medicaidOfficeNumber.setText(medicaidOffice.getTelephone_number());
 
     }
 
