@@ -40,7 +40,7 @@ public class ResumeBuilder extends AppCompatActivity {
         setContentView(R.layout.activity_resume_builder);
 
         recyclerView = findViewById(R.id.reycler_reusme);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false));
+        recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.HORIZONTAL, false));
         resumeObjects = new ArrayList<>();
 
         ResumeObject resumeObject, resumeObject1, resumeObject2, resumeObject3, resumeObject4, resumeObject5, resumeObject6;
