@@ -11,7 +11,6 @@ import com.google.gson.Gson;
 import com.nyc.guideme.details.JobDetailsActivity;
 import com.nyc.guideme.R;
 import com.nyc.guideme.models.JobModels;
-import com.nyc.guideme.models.JobsListSingleton;
 
 import java.util.ArrayList;
 import java.util.List;

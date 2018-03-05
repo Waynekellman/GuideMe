@@ -64,7 +64,7 @@
     <string name="business3">Create a business analyst resume that will get you noticed by including your operational and analytical skills, your knowledge of specific industries, software programs you have working knowledge of, and your top work achievements.</string>
     <string name="reception">Receptionists play a big part in keeping an office or business running smoothly. Receptionists are responsible for a wide range of duties, including greeting clients, receiving delivered items, serving as the main contact for the organization, and managing the phone system.</string>
     <string name="reception2">This winning Receptionist Resume example highlights skills such as multi-line phone system knowledge, vendor coordination, security processes, data entry, and document management.</string>
-    <string name="reception3">To create a Receptionist Resume that will win you the interview, be sure to focus on your unique set of skills, including your software knowledge, such as Microsoft Word and Excel; any accounting skills you have; and any relevant administrative skills that relate to the position you are applying for.</string>
+    <string name="reception3">To create a Receptionist Resume that will win you the interview, be sure to focus on your unique set of skills, including your software knowledge, such as Microsoft Word and Excel; any accounting skills you have; and any relevant administrative skills that relate to the checkInit you are applying for.</string>
     <string name="human">Human Resource Managers provide an essential function at every organization. HR Managers maintain and organize employee records, are in charge of recruiting practices, manage benefits administration, and address employee relations issues.</string>
     <string name="human2">Following this Human Resource Manager Resume example, your Resume should include your unique set of HR skills, such as hiring and retention knowledge, compensation and payroll duties and administration, knowledge of labor laws, employee records management, training, and interpersonal employee relations skills.</string>
     <string name="human3">Make your Human Resource Manager Resume more comprehensive by including any industry-specific knowledge you have, your affiliations, certificates that you’ve earned, and your educational background.</string>
@@ -79,4 +79,5 @@
 
     <!-- JobDetails Activity link-->
     <string name="jobs_page">Apply Here with jobID&#160;<a href="https://a127-jobs.nyc.gov/">https://a127-jobs.nyc.gov/</a></string>
+    <string name="map_button">MAP</string>
 </resources>

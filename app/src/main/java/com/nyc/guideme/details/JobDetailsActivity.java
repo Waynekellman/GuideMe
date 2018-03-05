@@ -21,7 +21,6 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.gson.Gson;
 import com.nyc.guideme.R;
 import com.nyc.guideme.models.JobModels;
-import com.nyc.guideme.models.JobsListSingleton;
 
 import java.io.IOException;
 import java.util.List;

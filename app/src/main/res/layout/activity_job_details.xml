@@ -203,7 +203,7 @@
             android:layout_height="wrap_content"
             android:textColor="@color/colorLightBlue"
             android:textStyle="bold"
-            android:text="position : "
+            android:text="checkInit : "
             android:textSize="15sp" />
 
         <TextView
