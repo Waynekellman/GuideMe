@@ -7,6 +7,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 //import com.bumptech.glide.Glide;
+import com.github.chrisbanes.photoview.PhotoView;
 import com.nyc.guideme.R;
 import com.nyc.guideme.eligibility.ResumeObject;
 import com.squareup.picasso.Picasso;
@@ -17,7 +18,7 @@ import com.squareup.picasso.Picasso;
 
 public class ViewHolder extends RecyclerView.ViewHolder {
 
-    ImageView imageView ;
+    PhotoView imageView ;
     TextView textView;
     Context context;
 
@@ -27,7 +28,7 @@ public class ViewHolder extends RecyclerView.ViewHolder {
         imageView = itemView.findViewById(R.id.image_view_resume);
 
 
-        textView = itemView.findViewById(R.id.text_view_resume);
+       // textView = itemView.findViewById(R.id.text_view_resume);
         context = itemView.getContext();
 
     }
