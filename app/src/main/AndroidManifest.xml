@@ -27,7 +27,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
-        <activity android:name=".MainActivity">
+        <activity android:name=".splash.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -47,10 +47,11 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
+        <activity android:name="MainActivity" />
         <activity android:name=".details.MedicaidTipsActivity" />
         <activity android:name=".eligibility.ResumeBuilder" />
         <activity android:name=".details.MedicaidDetailActivity" />
-        <activity android:name=".details.FoodStampsDetailsActivity"></activity>
+        <activity android:name=".details.FoodStampsDetailsActivity" />
     </application>
 
 </manifest>
