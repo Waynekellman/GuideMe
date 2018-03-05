@@ -20,7 +20,7 @@ import com.nyc.guideme.MainActivity;
 import com.nyc.guideme.R;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
-    Button btnLogin;
+    Button btnLogin,guestLogin;
     EditText input_email,input_password;
     TextView btnSignup,btnForgotPass;
 
@@ -35,6 +35,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         //View
         btnLogin = (Button)findViewById(R.id.login_btn_login);
+        guestLogin = (Button)findViewById(R.id.login_btn_guest);
         input_email = (EditText)findViewById(R.id.login_email);
         input_password = (EditText)findViewById(R.id.login_password);
         btnSignup = (TextView)findViewById(R.id.login_btn_signup);
@@ -44,6 +45,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         btnSignup.setOnClickListener(this);
         btnForgotPass.setOnClickListener(this);
         btnLogin.setOnClickListener(this);
+        guestLogin.setOnClickListener(this);
 
         //Init Firebase Auth
         auth = FirebaseAuth.getInstance();
@@ -68,6 +70,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         else if(view.getId() == R.id.login_btn_login)
         {
             loginUser(input_email.getText().toString(),input_password.getText().toString());
+        }else if (view.getId()==R.id.login_btn_guest){
+            startActivity(new Intent(LoginActivity.this,MainActivity.class));
+            finish();
         }
     }
 
