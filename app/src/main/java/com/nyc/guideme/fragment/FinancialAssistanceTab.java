@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 
 import com.nyc.guideme.R;
 import com.nyc.guideme.adapter.FinancialAdapter;
+import com.nyc.guideme.models.FoodListSingleton;
 import com.nyc.guideme.models.FoodStampOfficeModel;
 import com.nyc.guideme.network.RetrofitClient;
 
@@ -58,7 +59,9 @@ public class FinancialAssistanceTab extends Fragment {
             @Override
             public void onSuccessModel(List<FoodStampOfficeModel> foodStampOfficeModels) {
                 Log.d(TAG, "onSuccessModel: Food " + foodStampOfficeModels.get(0).getFacility_name());
-                financialAdapter = new FinancialAdapter(foodStampOfficeModels);
+                FoodListSingleton.getInstance().setFoodStampOfficeModelList(foodStampOfficeModels);
+                financialAdapter = new FinancialAdapter(FoodListSingleton.getInstance().getFoodStampOfficeModelList());
+                FoodListSingleton.getInstance().setCheckInit(true);
                 financialRecyclerview.setAdapter(financialAdapter);
 
             }

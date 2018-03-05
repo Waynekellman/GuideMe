@@ -1,6 +1,5 @@
 package com.nyc.guideme.models;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -11,7 +10,7 @@ public class JobsListSingleton {
 
     private static JobsListSingleton jobsListSingleton;
     private List<JobModels> jobModelsArrayList;
-    private int position;
+    private boolean checkInit;
 
     public static JobsListSingleton getInstance() {
         if (jobsListSingleton == null) {
@@ -22,12 +21,12 @@ public class JobsListSingleton {
 
     }
 
-    public int getPosition() {
-        return position;
+    public boolean isCheckInit() {
+        return checkInit;
     }
 
-    public void setPosition(int position) {
-        this.position = position;
+    public void setCheckInit(boolean checkInit) {
+        this.checkInit = checkInit;
     }
 
     public void setJobModelsArrayList(List<JobModels> jobModelsArrayList) {

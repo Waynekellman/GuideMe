@@ -19,6 +19,7 @@ import com.nyc.guideme.adapter.JobAdapter;
 import com.nyc.guideme.details.MedicaidTipsActivity;
 import com.nyc.guideme.eligibility.ResumeBuilder;
 import com.nyc.guideme.models.JobModels;
+import com.nyc.guideme.models.JobsListSingleton;
 import com.nyc.guideme.network.RetrofitClient;
 
 import java.util.List;
@@ -65,23 +66,31 @@ public class JobTab extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        jobsNetworkListener = new RetrofitClient.JobsNetworkListener() {
-            @Override
-            public void onSuccessModel(List<JobModels> jobModels) {
-                Log.d(TAG, "onSuccessModel: Jobs " + jobModels.get(0).getBusiness_title());
-                Log.d(TAG, "onSuccessModel: " + jobModels.size());
-                jobAdapter = new JobAdapter(jobModels);
-                jobRecyclerView.setAdapter(jobAdapter);
+        if (JobsListSingleton.getInstance().isCheckInit()){
+            jobAdapter = new JobAdapter(JobsListSingleton.getInstance().getJobModelsArrayList());
+            jobRecyclerView.setAdapter(jobAdapter);
+        } else {
 
-            }
+            jobsNetworkListener = new RetrofitClient.JobsNetworkListener() {
+                @Override
+                public void onSuccessModel(List<JobModels> jobModels) {
+                    Log.d(TAG, "onSuccessModel: Jobs " + jobModels.get(0).getBusiness_title());
+                    Log.d(TAG, "onSuccessModel: " + jobModels.size());
+                    JobsListSingleton.getInstance().setJobModelsArrayList(jobModels);
+                    JobsListSingleton.getInstance().setCheckInit(true);
+                    jobAdapter = new JobAdapter(jobModels);
+                    jobRecyclerView.setAdapter(jobAdapter);
 
-            @Override
-            public void onFailure(Throwable t) {
-                t.printStackTrace();
-            }
-        };
-        RetrofitClient.getInstance().setJobsNetworkListener(jobsNetworkListener);
-        RetrofitClient.getInstance().getJobModel();
+                }
+
+                @Override
+                public void onFailure(Throwable t) {
+                    t.printStackTrace();
+                }
+            };
+            RetrofitClient.getInstance().setJobsNetworkListener(jobsNetworkListener);
+            RetrofitClient.getInstance().getJobModel();
+        }
     }
 
     public interface OnFragmentInteractionListener {
