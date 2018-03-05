@@ -7,6 +7,7 @@ import android.os.Bundle;
 
 import com.nyc.guideme.MainActivity;
 import com.nyc.guideme.R;
+import com.nyc.guideme.login.LoginActivity;
 
 public class Splash extends AppCompatActivity {
 
@@ -21,8 +22,9 @@ public class Splash extends AppCompatActivity {
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    Intent intent = new Intent(Splash.this, MainActivity.class);
+                    Intent intent = new Intent(Splash.this, LoginActivity.class);
                     startActivity(intent);
+                    finish();
 
                 }
             }, SPLASH_TIME_OUT);
